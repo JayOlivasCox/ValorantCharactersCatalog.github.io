@@ -1,0 +1,1 @@
+# ValorantCharactersCatalog.github.io
