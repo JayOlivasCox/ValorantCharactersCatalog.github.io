@@ -1,0 +1,165 @@
+html{
+    background-color: rgb(24, 28, 36);
+}
+body {  
+    align-items:normal;
+    height: 80%;
+    display: cover;
+}
+#filterAndLabel{
+    margin-top: 3%;
+    display: block;
+    justify-content: center;
+}
+Body #howItWorks h3, #howItWorks h4 {
+    background-color: rgba(225,84,92, .97);
+    position: absolute;
+    bottom: 35px;
+    left: 15px;
+    border: 1px solid black;
+}
+Body #howItWorks h3{
+    font-size: 50px;
+}
+Body #howItWorks h4{
+    font-size: 16px;
+    text-align: center;
+    width: 438.5px;
+}
+text{
+    color: rgba (24,28,36,.9);
+}
+#label{
+    text-align: center;
+    font-size: 17px;
+    background-color: rgba(225,84,92, .98);
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: rgba(225,84,92, .98);
+    width: 62px;
+    height: cover;
+}
+#card-container h2{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonChar {
+    background-color: rgba(235,84,92, .93);
+    align-self: center;
+    height:460px;
+    border: 1px solid black;
+    width: 275px;
+    text-align: center;
+    font-family: "Arial";
+}
+.prevChar-card-content{
+    height : 10px;
+    align-self: left;
+}
+
+/* Card container styles */
+#card-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
+    margin-bottom: 10px;
+}
+.buttonChar img {
+    width: 195px;
+    height: 300px;
+    margin-top: 5px;
+}
+.prevChar {
+    background-color: rgba(235,84,92, .93);
+    align-self: center;
+    height:340px;
+    border: 1px solid black;
+    width: 205px;
+    text-align: center;
+    font-family: "Arial";
+    margin-top: 90px;
+    margin-right: 20px;
+}
+.prevChar-card-content{
+    height : 10px;
+    align-self: left;
+}
+.prevChar img {
+    width: 125px;
+    height: 209px;
+    margin: 5px;
+}
+.nextChar {
+    background-color: rgba(235,84,92, .93);
+    align-self: center;
+    height:340px;
+    border: 1px solid black;
+    width: 205px;
+    text-align: center;
+    font-family: "Arial";
+    margin-top: 90px;
+    margin-left: 20px;
+}
+.nextChar-card-content{
+    height : 10px;
+    align-self: left;
+}
+.nextChar img {
+    width: 125px;
+    height: 209px;
+    margin: 5px;
+}
+
+.button1, .button2 {    
+    text-align: center;
+    background-color: rgba(225,84,92, .85);
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.button1:hover,.button2:hover,.buttonChar:hover, #homeButton:hover {
+    background-color: rgba(0, 86, 179, .97);
+}
+
+/* Filter dropdown styles */
+#filter {
+    font-size: 17px;
+    text-align: left;
+    background-color: rgba(225,84,92, .98);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: rgba(225,84,92, .98);
+    height: cover;
+    width: 99px;
+}
+/* Footer styles */
+footer {
+    text-align: center;
+    display: block;
+    justify-content: center;
+}
+footer #homeButton{
+    background-color: rgba(225,84,92, .97);
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    height: 40px;
+    width: 80px;
+    font-size: 22px;
+}
+

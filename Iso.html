@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iso Information</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Information about a character">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://www.techspot.com/images2/downloads/topdownload/2020/06/2020-06-09-ts3_thumbs-7fd.png" type="image/x-icon">
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 id="charName">Iso</h1>
+    </header>
+    <main>
+        <h2>Role: Duelist</h2>
+        <h3>
+            Chinese fixer for hire, Iso falls into a flow state to dismantle the opposition. Reconfiguring ambient energy into bulletproof protection, he advances with focus towards his next duel to the death.        </h3>
+        <h4 id="labelForOptions">
+            Abilties:
+        </h4>
+        <ul id="Abilities">
+            <li id="button1"><button type="button" onclick="showAbility('Q')">Q</button></li>
+            <li id="button2"><button type="button" onclick="showAbility('E')">E</button></li>
+            <li id="button3"><button type="button" onclick="showAbility('C')">C</button></li>
+            <li id="button4"><button type="button" onclick="showAbility('X')">X</button></li>
+        </ul>
+        <container id="abilityVid">
+            <div id="abilityDescription"></div>
+            <video id="abilityVideo" controls>
+                Your browser does not support the video tag.
+            </video>
+        </container>
+    </main>
+    <footer>
+        <button id="homeButton" onclick="goHome()"> 
+            Back
+        </button>
+    </footer>
+</body>
+
+<style> 
+    body h3, h2, h1{
+        width: 560px;
+        align-self: left;
+    }
+    body h1{
+        font-size: 42px;
+    }
+    body h4{
+        font-size: 30px;
+        margin-top: 40px;
+    }
+    body{
+        margin-left: 18px;
+        color: rgba(235,84,92, 1);
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        display: inline;
+    }
+    #labelForOptions{
+        font-size: 30px;
+    }
+    #abilityDescription{
+        font-size:20px;
+    }
+    #Abilities button{
+        height: 40px;
+        background-color: rgba(235,84,92, 1);
+        color: rgb(24, 28, 36);
+    }
+    #Abilities button:hover{
+        background-color: blueviolet;
+    }
+    #labelForOptions{
+        margin-bottom: 10px;
+    }
+    #abilityDescription{
+        width: 560px;
+    }
+    #abilityVideo{
+        width: 810px;
+        position: absolute;
+        right: 75px;
+        top: 75px;
+    }
+</style>
+
+</html>

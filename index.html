@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Catalog Of Valorant Agents</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Names, pictures, and descriptions of Valorant characters and their abilities">
+    <link rel="icon" href="https://www.techspot.com/images2/downloads/topdownload/2020/06/2020-06-09-ts3_thumbs-7fd.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+        html {
+            background-image: url('https://cdn.discordapp.com/attachments/874175166362578965/1226720729249087539/iycyAteZBDTveYTEVgoNK-transformed.jpeg?ex=6625cbb5&is=661356b5&hm=2e04cb9b5ae3b1ea6781adcfb8e75fac005b5de0e6f434e1ee462a11100ddf52&'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+        }
+    </style>
+    <div id= "filterAndLabel" style="display: flex; align-items: center;">
+        <label id="label" for="filter">Display: </label>
+        <select id="filter" onchange="filterCharacters();">
+            <option value="all">All</option>
+            <option value="duelist">Duelist</option>
+            <option value="initiator">Initiator</option>
+            <option value="controller">Controller</option>
+            <option value="sentinel">Sentinel</option>
+        </select>  
+    </div>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="title"></h1>
+    </header>
+    <div id="card-container">
+        
+    </div>
+    <div id="card-container">
+        <!-- Main card template -->
+        <button class="buttonChar" style="display: none;" onclick="handleCardClick();">
+            <div class="card-content">
+                <h2>Agent</h2>
+                <img src="" alt="">
+            </div>       
+        </button>
+        <!-- Additional card containers -->
+        <div class="prevChar" style="display: none;">
+            <div class="card-content">
+                <h2>Agent</h2>
+                <img src="" alt="">
+            </div>       
+        </div>
+        <div class="nextChar" style="display: none;">
+            <div class="card-content">
+                <h2>Agent</h2>
+                <img src="" alt="">
+            </div>       
+        </div>
+    </div>
+    <div id = "howItWorks"> 
+        <h3>
+            Valorant Characters
+        </h3>
+        <h4>
+            Move over to a character and then click on them to see more.
+        </h4>
+    </div>
+    
+    <footer>
+        
+        <button class="button1 cooldown-button" onclick="showPreviousCharacter();">
+            Previous 
+        </button>
+        <button class="button2 cooldown-button" onclick="showNextCharacter();">
+            Next
+        </button>
+        
+    </footer>
+</body>
+
+</html>
