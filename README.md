@@ -1,1 +1,1 @@
-# ValorantCharactersCatalog.github.io
+This website is intended to be a fun way to learn about Valorant Characters and their abilities. On the main page, the user can click next or previous to move the character they're seeing, they can also filter characters by their role in-game. Once the user clicks on the character image, a different screen with their their abilities, what each ability does(and a clip of it), their role, and a brief piece of their in-game lore.
