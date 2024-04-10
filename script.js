@@ -114,7 +114,7 @@ function showPreviousCharacter() {
         }
         showCards();
         cardContainer.style.opacity = 1; // Fade in container after cards are updated
-    }, 150); // Wait for 500 milliseconds before updating cards
+    }, 150); // Wait for 150 milliseconds before updating cards
 }
 
 function showNextCharacter() {
@@ -135,7 +135,7 @@ function showNextCharacter() {
         }
         showCards();
         cardContainer.style.opacity = 1; // Fade in container after cards are updated
-    }, 150); // Wait for 00 milliseconds before updating cards
+    }, 150); // Wait for 150 milliseconds before updating cards
 }
 
 function filterCharacters() {
@@ -167,7 +167,7 @@ function filterCharacters() {
         showCards();
         // Fade in card container after cards are updated
         cardContainer.style.opacity = 1;
-    }, 100); // Wait for 500 milliseconds before updating cards
+    }, 100); // Wait for 100 milliseconds before updating cards
 }
 
 function handleCardClick() {
