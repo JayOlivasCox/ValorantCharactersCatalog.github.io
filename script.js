@@ -174,10 +174,12 @@ function handleCardClick() {
     // Get the character being displayed
     let character = filteredCharacters[indexOfCurrChar];
     // Redirect to a new page with information about the character
-    if(character.name==="Kay/o")
+    if(character.name==="Kay/o"){
         window.location.href = "Kayo.html";
-    else
+    }
+    else{
         window.location.href = character.name + ".html" ;
+    }
 }
 
 // Call the showAbility() function with 'Q' as the default ability when the page loads
