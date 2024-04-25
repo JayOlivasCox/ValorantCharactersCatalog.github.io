@@ -10,9 +10,9 @@ function Character(name, role, pic, qDescription, qLink, eDescription, eLink, cD
     this.cLink = cLink;
     this.xDescription = xDescription;
     this.xLink = xLink;
-
 }
 
+// Create every character with their respective attributes
 let characters = [
     new Character ("Cypher", "Sentinel", "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt158572ec37653cf3/5eb7cdc19df5cf37047009d1/V_AGENTS_587x900_Cypher.png", "INSTANTLY toss the cyber cage in front of Cypher. Activate to create a zone that blocks vision and slows enemies who pass through it.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt019fa05d6b7fddef/5ecad7e597b46c1911ad186c/Cypher_Q_v001_web.mp4", "EQUIP a spycam. FIRE to place the spycam at the targeted location. RE-USE this ability to take control of the camera's view. While in control of the camera, FIRE to shoot a marking dart. This dart will Reveal the location of any player struck by the dart. This ability can be picked up to be REDEPLOYED.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt47c03800823ce304/5ecad7e64a28e119db562296/Cypher_E_v001_web.mp4", "EQUIP a trapwire. FIRE to place a destructible and covert tripwire at the targeted location creating a line that spans between the placed location and the wall opposite. Enemy players who cross a tripwire will be tethered, revealed, and dazed after a short period if they do not destroy the device in time. This ability can be picked up to be REDEPLOYED.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt9b7d004dc573791c/5ecad7e85e73766852c8ed8c/Cypher_C_v001_web.mp4", "INSTANTLY use on a dead enemy player in your crosshairs to reveal the location of all living enemy players.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt29f3571576a3937f/5ecad7e5e2a559592eb0c1b0/Cypher_X_v001_web.mp4"),
     new Character ("Reyna", "Duelist", "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6577b1f58530e6b2/5eb7cdc121a5027d77420208/V_AGENTS_587x900_Reyna.png", "Enemies killed by Reyna leave behind Soul Orbs that last 3 seconds. INSTANTLY consume a nearby soul orb, rapidly healing for a short duration. Health gained through this skill exceeding 100 will decay over time. If EMPRESS is active, this skill will automatically cast and not consume the orb.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltb216220f42c804e2/5ecad85d4a28e119db5622a8/Reyna_Q_v001_web.mp4", "INSTANTLY consume a nearby soul orb, becoming intangible for a short duration. If EMPRESS is active, also become invisible.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt77e99ec99ef3a839/5ecad85e2f5c725928765503/Reyna_E_v002_web.mp4", "EQUIP an ethereal destructible eye. ACTIVATE to cast the eye a short distance forward. The eye will Nearsight all enemies who look at it.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltf6109b8be97e8d96/5ecad85db42d3333c95dd1b2/Reyna_C_v002_web.mp4", "INSTANTLY enter a frenzy, increasing firing speed, equip and reload speed dramatically. Scoring a kill renews the duration.", "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltadf53a38e449cb4d/5ecad85cbab1845d392dfd0f/Reyna_X_v001_web.mp4"),
@@ -41,53 +41,70 @@ let characters = [
 ];
 let filteredCharacters = characters;
 
+// Create the indexes in the right spot
 let indexOfCurrChar = parseInt(localStorage.getItem('indexOfCurrChar')) || 0;
 let indexOfPrevChar = indexOfCurrChar - 1 < 0 ? characters.length - 1 : indexOfCurrChar - 1;
 let indexOfNextChar = indexOfCurrChar + 1 >= characters.length ? 0 : indexOfCurrChar + 1;
 
 // Function to display cards
 function showCards() {
+    // Grab the whole div where the cards will be
     const cardContainer = document.getElementById("card-container");
-    cardContainer.innerHTML = "";
+    
+    // Reset the card to its template
+    cardContainer.innerHTML = ""; 
+
+    // Make the variables equal their respective card
     const currCard = document.querySelector(".buttonChar");
     const prevCard = document.querySelector(".prevChar");
     const nextCard = document.querySelector(".nextChar");
 
+    // Create new variables for each character
     let character = filteredCharacters[indexOfCurrChar];
     let characterPrev = filteredCharacters[indexOfPrevChar];
     let characterNext = filteredCharacters[indexOfNextChar];
 
-    const currCharCard = currCard.cloneNode(true); // Copy the template card
-    const prevCharCard = prevCard.cloneNode(true); // Copy the template card
-    const nextCharCard = nextCard.cloneNode(true); // Copy the template card
+    // Copy the template card
+    const currCharCard = currCard.cloneNode(true); 
+    const prevCharCard = prevCard.cloneNode(true); 
+    const nextCharCard = nextCard.cloneNode(true); 
 
-    editCardContent(currCharCard, prevCharCard, nextCharCard, character, characterNext, characterPrev); // Edit title and image
-    cardContainer.appendChild(prevCharCard);
-    cardContainer.appendChild(currCharCard);
-    cardContainer.appendChild(nextCharCard); // Add new card to the container
+    // Edit name and image
+    editCardContent(currCharCard, prevCharCard, nextCharCard, character, characterNext, characterPrev); 
+
+    // Add cards to their respective places
+    cardContainer.appendChild(prevCharCard); 
+    cardContainer.appendChild(currCharCard); 
+    cardContainer.appendChild(nextCharCard); 
 }
 
 function editCardContent(card, card2, card3, character, characterNext, characterPrev) {
+    // Make the cards display with the correct width
     card.style.display = "block";
     card2.style.display = "block";
     card3.style.display = "block";
 
+    // Select the cards to then change them
     const cardHeader = card.querySelector("h2");
     const cardHeaderPrev = card2.querySelector("h2");
     const cardHeaderNext = card3.querySelector("h2");
 
+    // Change the cards' characters' names
     cardHeaderPrev.textContent = characterPrev.name;
     cardHeaderNext.textContent = characterNext.name;
     cardHeader.textContent = character.name;
 
+    // Select the cards' images to then change them
     const cardImage = card.querySelector("img");
     const cardImage2 = card2.querySelector("img");
     const cardImage3 = card3.querySelector("img");
 
+    // Change the cards' images to the characters' images
     cardImage.src = character.pic;
     cardImage2.src = characterPrev.pic;
     cardImage3.src = characterNext.pic;
 
+    // Add descriptions to the character photos
     cardImage.alt = character.name + " Photo";
     cardImage2.alt = characterPrev.name + " Photo";
     cardImage3.alt = characterNext.name + " Photo";
@@ -98,9 +115,17 @@ function editCardContent(card, card2, card3, character, characterNext, character
 
 function showPreviousCharacter() {
     const cardContainer = document.getElementById("card-container");
-    cardContainer.style.opacity = 0; // Fade out container
+
+    // Make the container fade out to make a transition effect 
+    cardContainer.style.opacity = 0; 
+
+    // Change the card after 150ms of the card fading (150ms is the second argument, so it is at the end of the function)
     setTimeout(() => {
+
+        // Decrease the index because we are trying to show the previous character
         indexOfPrevChar--;
+        
+        // These if statements check if the new index is going to be out of bounds in the list or not
         if(indexOfPrevChar < 0){
             indexOfPrevChar = filteredCharacters.length - 1;
         }
@@ -114,12 +139,15 @@ function showPreviousCharacter() {
         }
         showCards();
         cardContainer.style.opacity = 1; // Fade in container after cards are updated
-    }, 150); // Wait for 150 milliseconds before updating cards
+    }, 150); /* <-- the 150ms */
 }
 
+// This does the same thing as "showPrevCharacter()" but instead of subtracting 1 from the index it adds to it since we're doing the next character
 function showNextCharacter() {
     const cardContainer = document.getElementById("card-container");
-    cardContainer.style.opacity = 0; // Fade out container
+
+    cardContainer.style.opacity = 0; 
+
     setTimeout(() => {
         indexOfCurrChar++;
         if (indexOfCurrChar >= filteredCharacters.length) {
@@ -134,13 +162,17 @@ function showNextCharacter() {
             indexOfNextChar = 0;
         }
         showCards();
-        cardContainer.style.opacity = 1; // Fade in container after cards are updated
-    }, 150); // Wait for 150 milliseconds before updating cards
+        cardContainer.style.opacity = 1; 
+    }, 150); 
 }
 
+// 
 function filterCharacters() {
+    // Grabs the "value" the user selects to then filter based on what it is. The "value" means the characters' role in the game
     var selectedOption = document.getElementById("filter").value;
-    localStorage.setItem('selectedFilter', selectedOption); // Store selected filter option
+
+    // Saves filter value to memory
+    localStorage.setItem('selectedFilter', selectedOption);
 
     if (selectedOption === "all") {
         // Reset to original array when "All" is selected
@@ -152,12 +184,12 @@ function filterCharacters() {
         });
     }
     
-    // Recalculate indices
+    // Recalculate indices to not be out of bounds (edge cases)
     indexOfCurrChar = 0;
     indexOfPrevChar = filteredCharacters.length - 1;
     indexOfNextChar = 1;
 
-    // Fade out card container
+    // Fade out card container for transition effect
     const cardContainer = document.getElementById("card-container");
     cardContainer.style.transition = "opacity 0s";
     cardContainer.style.opacity = 0;
@@ -165,14 +197,16 @@ function filterCharacters() {
     // Update displayed cards after a short delay for the fade out effect
     setTimeout(() => {
         showCards();
+
         // Fade in card container after cards are updated
         cardContainer.style.opacity = 1;
-    }, 100); // Wait for 100 milliseconds before updating cards
+    }, 100); 
 }
 
 function handleCardClick() {
     // Get the character being displayed
     let character = filteredCharacters[indexOfCurrChar];
+
     // Redirect to a new page with information about the character
     if(character.name==="Kay/o"){
         window.location.href = "Kayo.html";
@@ -188,9 +222,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function showAbility(abilityType) {
+    // Grab chararcter name to display the correct abilities
     let charName = document.getElementById("charName").textContent;
 
     var character;
+
+    // Find correct character using charName
     for(let i = 0; i<filteredCharacters.length; i++){
         if(charName===filteredCharacters[i].name){
             character = filteredCharacters[i];
@@ -225,23 +262,31 @@ function showAbility(abilityType) {
             console.log("Invalid ability type");
     }
     
-    // Call the play() function to start playing the video
+    // Call the play() function to start playing the video when the page is loaded
     video.play();
 }
+
+// When the user presses the "back" button, go back to the index
 function goHome(){
     window.location.href = "index.html";
 }
 
+// Make everything be displayed when the page loads
 document.addEventListener("DOMContentLoaded", function() {
+
     // Check for stored filter option
     const storedFilter = localStorage.getItem('selectedFilter');
     if (storedFilter) {
+        
         // Apply stored filter option
         document.getElementById("filter").value = storedFilter;
         filterCharacters();
     }
 
+    // Make it so the buttons can't be spammed (Makes the page look smoother)
     var buttons = document.querySelectorAll(".cooldown-button");
+
+    // Make the buttons responsive on click
     buttons.forEach(function(button) {
         button.addEventListener("click", function() {
             handleButtonClick(button);
