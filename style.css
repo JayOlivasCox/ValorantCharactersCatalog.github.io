@@ -11,10 +11,16 @@ body {
     display: block;
     justify-content: center;
 }
+
+#background-image{
+    background-size: 100%;
+}
+
 Body #howItWorks h3, #howItWorks h4 {
     background-color: rgba(225,84,92, .97);
     position: absolute;
-    bottom: 35px;
+    /* bottom: 10px; */
+    top: 2px;
     left: 15px;
     border: 1px solid black;
 }
@@ -25,7 +31,9 @@ Body #howItWorks h4{
     font-size: 16px;
     text-align: center;
     width: 438.5px;
+
 }
+
 text{
     color: rgba (24,28,36,.9);
 }
@@ -39,6 +47,7 @@ text{
     border-right: rgba(225,84,92, .98);
     width: 100px;
     height: cover;
+    margin-top: 100px;
 }
 #card-container h2{
     align-items: center;
@@ -146,7 +155,11 @@ text{
     border-left: rgba(225,84,92, .98);
     height: cover;
     width: 99px;
+    margin-top:100px;
+    margin-left:50px;
 }
+
+
 /* Footer styles */
 footer {
     text-align: center;
